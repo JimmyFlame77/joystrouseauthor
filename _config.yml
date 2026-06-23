@@ -17,13 +17,14 @@ author:
 # Build
 markdown: kramdown
 highlighter: rouge
-permanlink: /blog/:year/:month/:day/:title/
+permalink: /blog/:year/:month/:day/:title/
 
 # Plugins
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-paginate
 
 # Collections
 collections:
