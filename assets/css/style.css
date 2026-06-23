@@ -817,6 +817,59 @@ button { cursor: pointer; background: none; border: none; }
   border-top: 1px solid var(--color-border);
 }
 
+/* ── ABOUT PAGE ──────────────────────────────────────────── */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr clamp(200px, 28%, 280px);
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.about-text p {
+  margin-bottom: var(--space-5);
+  line-height: 1.8;
+}
+
+.about-portrait-figure {
+  position: relative;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.about-portrait-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  display: block;
+}
+
+.about-portrait-figure::after {
+  content: '';
+  position: absolute;
+  inset: -10px -10px auto auto;
+  width: 55%;
+  aspect-ratio: 1;
+  border: 2px solid oklch(from var(--color-primary) l c h / 0.4);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 640px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-portrait-figure {
+    width: clamp(160px, 50%, 220px);
+    margin-inline: auto;
+    order: -1;
+  }
+}
+
 /* ── 14. PAGINATION ──────────────────────────────────────── */
 .pagination {
   display: flex;
