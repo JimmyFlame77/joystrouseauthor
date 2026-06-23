@@ -2,10 +2,10 @@
 # Each entry powers the book cards on the homepage and any books/shop page.
 
 - title: "Playing with Fire"
-  subtitle: "A BitterSweet Prequel"
+  subtitle: "A BitterSweet Tale of Reinvention & Revenge"
   series: "BitterSweet Series"
   series_order: 0
-  cover: "/assets/images/img-placeholder.png"
+  cover: "/assets/images/playing-with-fire-cover.webp"
   description: "Set in 1952, a deadly fire leaves a woman named Bonnie Madsen presumed dead. Retired detective Joe Minelli traces her ghost through the back roads of Florida in this pulse-pounding prequel to the BitterSweet Series."
   genre: "Psychological Suspense"
   setting: "Florida, 1952"
