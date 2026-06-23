@@ -10,10 +10,10 @@
   genre: "Psychological Suspense"
   setting: "Florida, 1952"
   published: true
-  amazon_url: ""
-  barnes_url: ""
-  goodreads_url: ""
-  isbn: ""
+  amazon_url: "https://www.amazon.com/Playing-Fire-BitterSweet-Reinvention-Revenge/dp/B0G32F2FLN"
+  barnes_url: "https://www.barnesandnoble.com/w/playing-with-fire-joy-strouse/1148738378"
+  goodreads_url: "https://www.goodreads.com/book/show/243953420-playing-with-fire"
+  isbn: "ISBN-13 : 979-8317820138"
 
 - title: "Beyond the Broken Window"
   subtitle: "Book One of the BitterSweet Series"
@@ -24,7 +24,7 @@
   genre: "Psychological Suspense"
   setting: "Baltimore, MD"
   published: true
-  amazon_url: ""
-  barnes_url: ""
-  goodreads_url: ""
+  amazon_url: "https://www.amazon.com/Beyond-Broken-Window-suspenseful-friendship-ebook/dp/B09NRWFT5N"
+  barnes_url: "https://www.barnesandnoble.com/w/beyond-the-broken-window-joy-strouse/1140794552"
+  goodreads_url: "https://www.goodreads.com/book/show/59951277-beyond-the-broken-window"
   isbn: "Print: 978-1-66781-771-2 | eBook: 978-1-66781-772-9"
