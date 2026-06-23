@@ -45,23 +45,26 @@
 
   </div>
 
-  <!-- Mobile Menu Panel -->
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-mobile-menu>
-    <nav aria-label="Mobile navigation">
-      <ul role="list">
-        {% for item in site.data.navigation %}
-          <li style="--i: {{ forloop.index }}">
-            <a href="{{ item.url | relative_url }}"
-               {% if page.url == item.url %}aria-current="page"{% endif %}>
-              {{ item.label }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </div>
-
 </header>
+
+<!-- Mobile Menu Panel — must live outside <header> so its z-index (150) beats
+     the overlay's z-index (140) in the root stacking context. Inside a sticky
+     header the panel's z-index would be scoped to the header's context (100)
+     and the overlay would cover it, blocking link clicks. -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-mobile-menu>
+  <nav aria-label="Mobile navigation">
+    <ul role="list">
+      {% for item in site.data.navigation %}
+        <li style="--i: {{ forloop.index }}">
+          <a href="{{ item.url | relative_url }}"
+             {% if page.url == item.url %}aria-current="page"{% endif %}>
+            {{ item.label }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
 
 <!-- Overlay for mobile menu -->
 <div class="menu-overlay" data-menu-overlay aria-hidden="true"></div>
