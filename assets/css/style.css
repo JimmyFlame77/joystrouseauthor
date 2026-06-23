@@ -593,7 +593,97 @@ button { cursor: pointer; background: none; border: none; }
   border-color: var(--color-primary);
 }
 
-/* ── 10. BLOG GRID ───────────────────────────────────────── */
+/* ── 10. HOME HERO ──────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding-block: clamp(var(--space-16), 10vw, var(--space-32));
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, oklch(from var(--color-primary) l c h / 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero-inner { grid-template-columns: 3fr 2fr; }
+}
+
+.hero-eyebrow {
+  display: block;
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.hero-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+}
+
+.hero-heading em {
+  font-style: italic;
+  color: var(--color-primary-active);
+}
+
+.hero-subtext {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 42ch;
+  line-height: 1.65;
+  margin-bottom: var(--space-8);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.hero-image { display: flex; justify-content: center; }
+
+.hero-image-frame {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-portrait {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+}
+
+.hero-image-ornament {
+  position: absolute;
+  inset: -8px -8px auto auto;
+  width: 55%;
+  aspect-ratio: 1;
+  border: 2px solid oklch(from var(--color-primary) l c h / 0.4);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── 11. BLOG GRID ───────────────────────────────────────── */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
