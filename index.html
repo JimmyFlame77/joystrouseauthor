@@ -219,6 +219,17 @@ body_class: home
   .hero-inner { grid-template-columns: 1fr 1fr; gap: var(--space-16); }
 }
 
+/* Constrain hero text width and ensure mobile breathing room */
+.hero-content {
+  max-width: 560px;
+}
+
+@media (max-width: 767px) {
+  .hero-content {
+    padding-inline: var(--space-2);
+  }
+}
+
 .hero-eyebrow {
   display: block;
   font-size: var(--text-xs);
