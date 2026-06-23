@@ -31,4 +31,4 @@ _Before the Broken Window._
 
 > Joy Strouse’s journey as a master storyteller continues with Playing with Fire, a prequel to Beyond the Broken Window. Her characters spring from the pages to reveal secrets of what went before the broken window, with simmering tension and a twisted, bittersweet end. - Amazon
 
-For side stories, insights, and news about upcoming events, be sure to join the Joy Strouse community [right here](https://joystrouseauthor.com/book-club/) and experience this unfolding narrative to fullest.
+For side stories, insights, and news about events, be sure to join the Joy Strouse community [right here](https://joystrouseauthor.com/book-club/) and experience this unfolding narrative to fullest.
