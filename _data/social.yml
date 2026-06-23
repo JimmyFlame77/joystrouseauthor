@@ -4,16 +4,16 @@
 
 - platform: "Facebook"
   icon: "facebook"
-  url: ""
+  url: "https://facebook.com/joystrouseauthor"
 
 - platform: "Instagram"
   icon: "instagram"
-  url: ""
+  url: "https://instagram.com/joystrousewriter"
 
 - platform: "Goodreads"
   icon: "goodreads"
-  url: ""
+  url: "https://www.goodreads.com/author/show/22090092.Joy_Strouse"
 
 - platform: "Amazon Author Page"
   icon: "amazon"
-  url: ""
+  url: "https://www.amazon.com/stores/author/B09NTZK99W/about"
