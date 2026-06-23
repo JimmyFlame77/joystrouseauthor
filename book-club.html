@@ -6,5 +6,91 @@ description: Join the Joy Strouse Book Club — discussion guides, exclusive con
 permalink: /book-club/
 ---
 
-<!-- Book club content coming soon -->
-<p>Book club content coming soon.</p>
+<!-- Book club -->
+
+<!-- ── PACKAGE INTRO ── -->
+<div class="bc-intro">
+
+  <div class="bc-intro-content">
+    <span class="section-label">For Readers &amp; Book Groups</span>
+    <h2 class="section-heading">The Book Club Package</h2>
+    <p>Bring the BitterSweet Series to your book club with Joy Strouse's specially curated discussion package. Whether you're reading <em>Beyond the Broken Window</em> or diving into the prequel <em>Playing with Fire</em>, the package includes discussion guides, author insights, and exclusive content to enrich your group's reading experience.</p>
+    <p>Special pricing is available for book clubs ordering multiple copies. Reach out directly to Joy for details.</p>
+    <a href="mailto:joy@joystrouseauthor.com" class="btn btn-primary">Contact for Special Club Pricing &rarr;</a>
+  </div>
+
+  <figure class="bc-image-figure">
+    <img
+      src="{{ '/assets/images/joy-strouse-book-club-package.webp' | relative_url }}"
+      alt="A reader enjoying the BitterSweet Series"
+      width="600"
+      height="600"
+      loading="eager"
+      decoding="async"
+    />
+  </figure>
+
+</div>
+
+<!-- ── THE SERIES ── -->
+<section class="bc-books" aria-label="The BitterSweet Series">
+  <header class="section-header reveal">
+    <span class="section-label">The Novels</span>
+    <h2 class="section-heading">The BitterSweet Series</h2>
+  </header>
+
+  <div class="books-grid">
+    {% for book in site.data.books %}
+    <article class="book-card reveal" style="--i: {{ forloop.index }}">
+      <div class="book-cover-wrap">
+        <img
+          src="{{ book.cover | relative_url }}"
+          alt="{{ book.title }} — book cover"
+          width="300"
+          height="450"
+          loading="lazy"
+          decoding="async"
+          class="book-cover"
+        />
+        {% if book.series_order == 0 %}
+          <span class="book-badge">Prequel</span>
+        {% elsif book.series_order == 1 %}
+          <span class="book-badge book-badge--primary">Book One</span>
+        {% endif %}
+      </div>
+      <div class="book-info">
+        <span class="book-series">{{ book.series }}</span>
+        <h3 class="book-title">{{ book.title }}</h3>
+        <p class="book-subtitle">{{ book.subtitle }}</p>
+        <p class="book-description">{{ book.description }}</p>
+        <div class="book-meta">
+          <span class="book-genre">{{ book.genre }}</span>
+          <span class="book-setting">{{ book.setting }}</span>
+        </div>
+        <div class="book-actions">
+          {% if book.amazon_url != "" %}
+            <a href="{{ book.amazon_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+          {% endif %}
+          {% if book.goodreads_url != "" %}
+            <a href="{{ book.goodreads_url }}" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Goodreads &rarr;</a>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ── WHERE TO BUY ── -->
+<section class="bc-retailers" aria-label="Where to buy Beyond the Broken Window">
+  <header class="section-header reveal">
+    <span class="section-label">Beyond the Broken Window</span>
+    <h2 class="section-heading">More Places to Buy</h2>
+  </header>
+  <div class="bc-retailer-row reveal">
+    <a href="https://www.amazon.com/Beyond-Broken-Window-suspenseful-friendship/dp/166781771X/ref=tmm_pap_swatch_0" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Amazon</a>
+    <a href="https://www.barnesandnoble.com/w/beyond-the-broken-window-joy-strouse/1140794552?ean=9781667817729" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Barnes &amp; Noble</a>
+    <a href="https://www.abebooks.com/9781667817712/Beyond-Broken-Window-suspenseful-novel-166781771X/plp" class="btn btn-outline" target="_blank" rel="noopener noreferrer">AbeBooks</a>
+    <a href="https://store.bookbaby.com/book/beyond-the-broken-window" class="btn btn-outline" target="_blank" rel="noopener noreferrer">BookBaby</a>
+  </div>
+</section>
