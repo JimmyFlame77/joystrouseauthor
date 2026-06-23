@@ -1,0 +1,45 @@
+{% comment %}
+  CTA Card — flexible, variable-driven
+  Usage:
+    {% include card-cta.html
+       headline="Join the Book Club"
+       body="Connect with other readers of the BitterSweet Series."
+       btn_label="Join Now"
+       btn_url="/book-club/"
+       image="/assets/images/img-placeholder.png"
+       accent="true"
+    %}
+  All parameters optional except headline and btn_label.
+{% endcomment %}
+
+<div class="card card-cta {% if include.accent == 'true' %}card-cta--accent{% endif %}">
+  {% if include.image %}
+    <div class="card-image">
+      <img
+        src="{{ include.image | relative_url }}"
+        alt="{{ include.headline }}"
+        width="800"
+        height="450"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  {% endif %}
+
+  <div class="card-body">
+    <h3 class="card-title">{{ include.headline }}</h3>
+
+    {% if include.body %}
+      <p class="card-text">{{ include.body }}</p>
+    {% endif %}
+
+    {% if include.btn_label %}
+      <a
+        href="{{ include.btn_url | default: '#' | relative_url }}"
+        class="btn {% if include.accent == 'true' %}btn-primary{% else %}btn-outline{% endif %}"
+      >
+        {{ include.btn_label }}
+      </a>
+    {% endif %}
+  </div>
+</div>

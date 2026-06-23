@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<section class="blog-index">
+  <header class="page-hero">
+    <div class="container">
+      <h1 class="page-title">{{ page.title | default: "The Blog" }}</h1>
+      {% if page.subtitle %}
+        <p class="page-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="blog-grid">
+      {% for post in paginator.posts %}
+        {% include card-blog.html post=post %}
+      {% endfor %}
+    </div>
+
+    {% if paginator.total_pages > 1 %}
+      <nav class="pagination" aria-label="Blog pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-prev">&larr; Newer Posts</a>
+        {% endif %}
+        <span class="pagination-info">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-next">Older Posts &rarr;</a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  </div>
+</section>

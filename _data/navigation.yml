@@ -1,0 +1,20 @@
+# Site Navigation
+# Add, remove, or reorder items here — the header include loops over this list.
+
+- label: "Home"
+  url: "/"
+
+- label: "About"
+  url: "/about-me/"
+
+- label: "Books"
+  url: "/#books"
+
+- label: "Blog"
+  url: "/blog/"
+
+- label: "Book Club"
+  url: "/book-club/"
+
+- label: "Contact"
+  url: "/contact-me/"

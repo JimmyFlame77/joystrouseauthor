@@ -1,0 +1,22 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author.name }}",
+  "url": "{{ site.url }}",
+  "description": "{{ site.description }}",
+  "jobTitle": "Author",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Baltimore",
+    "addressRegion": "MD",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    {% assign social_links = site.data.social | where_exp: "s", "s.url != ''" %}
+    {% for social in social_links %}
+      "{{ social.url }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>

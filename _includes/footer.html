@@ -1,0 +1,44 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner container">
+
+    <div class="footer-brand">
+      <a href="{{ '/' | relative_url }}" class="footer-logo" aria-label="Joy Strouse — Home">
+        <span class="logo-name">Joy Strouse</span>
+      </a>
+      <p class="footer-tagline">{{ site.subtitle }}</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <ul role="list">
+        {% for item in site.data.navigation %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="footer-social">
+      {% for social in site.data.social %}
+        {% if social.url != "" %}
+          <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.platform }}">
+            <img
+              src="https://cdn.simpleicons.org/{{ social.icon }}/ffffff"
+              alt="{{ social.platform }}"
+              width="20"
+              height="20"
+              loading="lazy"
+            />
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
+      <p class="footer-credit">Site by <a href="https://proxymarketing.ai" target="_blank" rel="noopener noreferrer">Proxy Marketing AI</a></p>
+    </div>
+  </div>
+
+</footer>

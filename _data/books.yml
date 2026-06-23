@@ -1,0 +1,30 @@
+# Books Data
+# Each entry powers the book cards on the homepage and any books/shop page.
+
+- title: "Playing with Fire"
+  subtitle: "A BitterSweet Prequel"
+  series: "BitterSweet Series"
+  series_order: 0
+  cover: "/assets/images/img-placeholder.png"
+  description: "Set in 1952, a deadly fire leaves a woman named Bonnie Madsen presumed dead. Retired detective Joe Minelli traces her ghost through the back roads of Florida in this pulse-pounding prequel to the BitterSweet Series."
+  genre: "Psychological Suspense"
+  setting: "Florida, 1952"
+  published: true
+  amazon_url: ""
+  barnes_url: ""
+  goodreads_url: ""
+  isbn: ""
+
+- title: "Beyond the Broken Window"
+  subtitle: "Book One of the BitterSweet Series"
+  series: "BitterSweet Series"
+  series_order: 1
+  cover: "/assets/images/img-placeholder.png"
+  description: "A debut novel of mystery, psychological suspense, love, sensuality, grief, and growth. Secrets buried in a broken family begin to surface — and nothing will ever be the same."
+  genre: "Psychological Suspense"
+  setting: "Baltimore, MD"
+  published: true
+  amazon_url: ""
+  barnes_url: ""
+  goodreads_url: ""
+  isbn: ""

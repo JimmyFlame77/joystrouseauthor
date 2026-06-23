@@ -1,0 +1,61 @@
+# ============================================================
+# Joy Strouse Author Site — Jekyll Configuration
+# ============================================================
+
+title: "Joy Strouse"
+title_separator: "|"
+subtitle: "Novelist · Psychological Suspense · BitterSweet Series"
+description: "Official website of Joy Strouse, author of the BitterSweet Series. Psychological suspense novels set in Baltimore, MD."
+url: "https://joystrouseauthor.com"
+baseurl: ""
+author:
+  name: "Joy Strouse"
+  bio: "Novelist and storyteller from Baltimore, MD. Author of the BitterSweet psychological suspense series."
+  location: "Baltimore, MD"
+  email: ""
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permanlink: /blog/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Collections
+collections:
+  posts:
+    output: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Joy Strouse"
+      image: "/assets/images/img-placeholder.png"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Pagination
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .jekyll-cache
+  - README.md
+  - _blog-config.json
