@@ -6,5 +6,101 @@ description: Contact Joy Strouse — for reader mail, press inquiries, book club
 permalink: /contact-me/
 ---
 
-<!-- Contact form coming soon -->
-<p>Contact form coming soon. In the meantime, reach out by email: <a href="mailto:joy@joystrouse.com"></a>joy@joystrouse.com</a></p>
+<div class="contact-form-wrap">
+  <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+    <input type="hidden" name="access_key" value="41052ef4-b9a2-4bd3-bec3-374128b1081a" />
+    <input type="hidden" name="subject" value="New message — joystrouse.com" />
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+    <div class="cf-row--split">
+      <div class="cf-field">
+        <label class="cf-label" for="cf-first">First Name</label>
+        <input class="cf-input" id="cf-first" type="text" name="first_name" required autocomplete="given-name" placeholder="First" />
+      </div>
+      <div class="cf-field">
+        <label class="cf-label" for="cf-last">Last Name</label>
+        <input class="cf-input" id="cf-last" type="text" name="last_name" required autocomplete="family-name" placeholder="Last" />
+      </div>
+    </div>
+
+    <div class="cf-field">
+      <label class="cf-label" for="cf-email">Email</label>
+      <input class="cf-input" id="cf-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+    </div>
+
+    <div class="cf-field">
+      <label class="cf-label" for="cf-message">
+        <span>Message</span>
+        <span class="cf-charcount" id="cf-charcount" aria-live="polite">0 / 2000</span>
+      </label>
+      <textarea class="cf-input cf-textarea" id="cf-message" name="message" required rows="7" maxlength="2000" placeholder="Your message&#8230;"></textarea>
+    </div>
+
+    <div class="cf-footer">
+      <button type="submit" class="btn btn-primary cf-submit" id="cf-submit">
+        <span class="cf-btn-label">Send Message</span>
+      </button>
+      <p class="cf-error" id="cf-error" role="alert" aria-live="assertive" hidden></p>
+    </div>
+
+  </form>
+</div>
+
+<script>
+(function () {
+  var form     = document.getElementById('contact-form');
+  var btn      = document.getElementById('cf-submit');
+  var label    = btn.querySelector('.cf-btn-label');
+  var errBox   = document.getElementById('cf-error');
+  var textarea = document.getElementById('cf-message');
+  var counter  = document.getElementById('cf-charcount');
+
+  textarea.addEventListener('input', function () {
+    counter.textContent = textarea.value.length + ' / 2000';
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (btn.classList.contains('transmitting') || btn.classList.contains('success')) return;
+
+    errBox.hidden = true;
+    btn.classList.add('transmitting');
+    btn.disabled = true;
+
+    var dotCount = 0;
+    var dotsTimer = setInterval(function () {
+      dotCount = (dotCount + 1) % 4;
+      label.textContent = 'Transmitting' + '.'.repeat(dotCount);
+    }, 350);
+
+    var data = new FormData(form);
+
+    setTimeout(function () {
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+          clearInterval(dotsTimer);
+          btn.classList.remove('transmitting');
+          if (json.success) {
+            btn.classList.add('success');
+            label.textContent = 'Sent!';
+          } else {
+            btn.disabled = false;
+            label.textContent = 'Send Message';
+            errBox.textContent = json.message || 'Something went wrong. Please try again.';
+            errBox.hidden = false;
+          }
+        })
+        .catch(function () {
+          clearInterval(dotsTimer);
+          btn.classList.remove('transmitting');
+          btn.disabled = false;
+          label.textContent = 'Send Message';
+          errBox.textContent = 'Network error. Please check your connection and try again.';
+          errBox.hidden = false;
+        });
+    }, 1500);
+  });
+}());
+</script>
