@@ -1043,6 +1043,33 @@ button { cursor: pointer; background: none; border: none; }
   line-height: 1.8;
 }
 
+.bc-inline-image-figure {
+  position: relative;
+  margin: var(--space-4) 0 0;
+  width: min(100%, 420px);
+}
+
+.bc-inline-image-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  display: block;
+}
+
+.bc-inline-image-figure::after {
+  content: '';
+  position: absolute;
+  inset: -10px -10px auto auto;
+  width: 55%;
+  aspect-ratio: 1;
+  border: 2px solid oklch(from var(--color-primary) l c h / 0.4);
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  z-index: -1;
+}
+
 .bc-image-figure {
   position: relative;
   margin: 0;
@@ -1091,6 +1118,11 @@ button { cursor: pointer; background: none; border: none; }
 @media (max-width: 640px) {
   .bc-intro {
     grid-template-columns: 1fr;
+  }
+
+  .bc-inline-image-figure {
+    width: clamp(200px, 80%, 320px);
+    margin-inline: auto;
   }
 
   .bc-image-figure {
