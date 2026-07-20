@@ -18,8 +18,8 @@ permalink: /book-club/
     <p>Special pricing is available for book clubs ordering multiple copies. Reach out directly to Joy for details.</p>
     <a href="mailto:joy@joystrouseauthor.com" class="btn btn-primary">Contact for Special Club Pricing &rarr;</a>
   
-    <div class="bc-intro-gallery" aria-label="Book club images">
-      <figure class="bc-gallery-figure">
+    <div aria-label="Book club images" style="display:flex; flex-wrap:wrap; gap:var(--space-4); margin-top:var(--space-4);">
+      <figure class="bc-image-figure" style="flex:1 1 240px; margin:0;">
         <img
           src="{{ '/assets/images/book-club-group.webp' | relative_url }}"
           alt="A book club group gathered for a discussion"
@@ -30,7 +30,7 @@ permalink: /book-club/
         />
       </figure>
 
-      <figure class="bc-gallery-figure">
+      <figure class="bc-image-figure" style="flex:1 1 240px; margin:0;">
         <img
           src="{{ '/assets/images/christmas-book-club.webp' | relative_url }}"
           alt="A Christmas book club scene"
@@ -42,6 +42,18 @@ permalink: /book-club/
       </figure>
     </div>
   </div>
+
+  <figure class="bc-image-figure">
+    <img
+      src="{{ '/assets/images/joy-strouse-book-club-package.webp' | relative_url }}"
+      alt="A reader enjoying the BitterSweet Series"
+      width="600"
+      height="600"
+      loading="eager"
+      decoding="async"
+    />
+  </figure>
+
 </div>
 
 <!-- ── THE SERIES ── -->
