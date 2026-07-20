@@ -1048,6 +1048,7 @@ button { cursor: pointer; background: none; border: none; }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-4);
   align-items: start;
+  margin-top: var(--space-4);
 }
 
 .bc-gallery-figure {
